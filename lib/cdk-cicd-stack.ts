@@ -7,7 +7,7 @@ export class CdkCicdStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
-    new CodePipeline(this, 'AwesomePipeline1', {
+    const pipeline = new CodePipeline(this, 'AwesomePipeline1', {
       pipelineName: 'AwesomePipeline1',
       synth: new ShellStep('Synth', {
         input: CodePipelineSource.gitHub('walterwu001/cdk-cicd', 'cicd-practice'),
@@ -18,6 +18,10 @@ export class CdkCicdStack extends cdk.Stack {
         primaryOutputDirectory: 'cdk.out'
       })
     });
+
+    const testStage = pipeline.addStage(new PipelineStage(this, 'PipelineTestStage', {
+      stageName: 'test'
+    }));
 
   }
 }
