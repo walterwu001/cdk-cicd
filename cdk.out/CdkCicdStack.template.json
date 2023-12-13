@@ -1,6 +1,6 @@
 {
  "Resources": {
-  "AwesomePipelineArtifactsBucket3EE45165": {
+  "AwesomePipeline1PipelineArtifactsBucket926A6D61": {
    "Type": "AWS::S3::Bucket",
    "Properties": {
     "BucketEncryption": {
@@ -22,14 +22,14 @@
    "UpdateReplacePolicy": "Retain",
    "DeletionPolicy": "Retain",
    "Metadata": {
-    "aws:cdk:path": "CdkCicdStack/AwesomePipeline/Pipeline/ArtifactsBucket/Resource"
+    "aws:cdk:path": "CdkCicdStack/AwesomePipeline1/Pipeline/ArtifactsBucket/Resource"
    }
   },
-  "AwesomePipelineArtifactsBucketPolicy276A13A5": {
+  "AwesomePipeline1PipelineArtifactsBucketPolicy063EF3C0": {
    "Type": "AWS::S3::BucketPolicy",
    "Properties": {
     "Bucket": {
-     "Ref": "AwesomePipelineArtifactsBucket3EE45165"
+     "Ref": "AwesomePipeline1PipelineArtifactsBucket926A6D61"
     },
     "PolicyDocument": {
      "Statement": [
@@ -47,7 +47,7 @@
        "Resource": [
         {
          "Fn::GetAtt": [
-          "AwesomePipelineArtifactsBucket3EE45165",
+          "AwesomePipeline1PipelineArtifactsBucket926A6D61",
           "Arn"
          ]
         },
@@ -57,7 +57,7 @@
           [
            {
             "Fn::GetAtt": [
-             "AwesomePipelineArtifactsBucket3EE45165",
+             "AwesomePipeline1PipelineArtifactsBucket926A6D61",
              "Arn"
             ]
            },
@@ -72,10 +72,10 @@
     }
    },
    "Metadata": {
-    "aws:cdk:path": "CdkCicdStack/AwesomePipeline/Pipeline/ArtifactsBucket/Policy/Resource"
+    "aws:cdk:path": "CdkCicdStack/AwesomePipeline1/Pipeline/ArtifactsBucket/Policy/Resource"
    }
   },
-  "AwesomePipelineRole9653F6D2": {
+  "AwesomePipeline1PipelineRole163F2CF8": {
    "Type": "AWS::IAM::Role",
    "Properties": {
     "AssumeRolePolicyDocument": {
@@ -92,10 +92,10 @@
     }
    },
    "Metadata": {
-    "aws:cdk:path": "CdkCicdStack/AwesomePipeline/Pipeline/Role/Resource"
+    "aws:cdk:path": "CdkCicdStack/AwesomePipeline1/Pipeline/Role/Resource"
    }
   },
-  "AwesomePipelineRoleDefaultPolicy4DDB7187": {
+  "AwesomePipeline1PipelineRoleDefaultPolicyCBCB0D12": {
    "Type": "AWS::IAM::Policy",
    "Properties": {
     "PolicyDocument": {
@@ -117,7 +117,7 @@
        "Resource": [
         {
          "Fn::GetAtt": [
-          "AwesomePipelineArtifactsBucket3EE45165",
+          "AwesomePipeline1PipelineArtifactsBucket926A6D61",
           "Arn"
          ]
         },
@@ -127,7 +127,7 @@
           [
            {
             "Fn::GetAtt": [
-             "AwesomePipelineArtifactsBucket3EE45165",
+             "AwesomePipeline1PipelineArtifactsBucket926A6D61",
              "Arn"
             ]
            },
@@ -142,7 +142,7 @@
        "Effect": "Allow",
        "Resource": {
         "Fn::GetAtt": [
-         "AwesomePipelineCodeBuildActionRoleD69D1C39",
+         "AwesomePipeline1CodeBuildActionRoleD6AD0717",
          "Arn"
         ]
        }
@@ -150,31 +150,31 @@
      ],
      "Version": "2012-10-17"
     },
-    "PolicyName": "AwesomePipelineRoleDefaultPolicy4DDB7187",
+    "PolicyName": "AwesomePipeline1PipelineRoleDefaultPolicyCBCB0D12",
     "Roles": [
      {
-      "Ref": "AwesomePipelineRole9653F6D2"
+      "Ref": "AwesomePipeline1PipelineRole163F2CF8"
      }
     ]
    },
    "Metadata": {
-    "aws:cdk:path": "CdkCicdStack/AwesomePipeline/Pipeline/Role/DefaultPolicy/Resource"
+    "aws:cdk:path": "CdkCicdStack/AwesomePipeline1/Pipeline/Role/DefaultPolicy/Resource"
    }
   },
-  "AwesomePipeline55957A23": {
+  "AwesomePipeline1Pipeline56E8854F": {
    "Type": "AWS::CodePipeline::Pipeline",
    "Properties": {
     "ArtifactStore": {
      "Location": {
-      "Ref": "AwesomePipelineArtifactsBucket3EE45165"
+      "Ref": "AwesomePipeline1PipelineArtifactsBucket926A6D61"
      },
      "Type": "S3"
     },
-    "Name": "AwesomePipeline",
+    "Name": "AwesomePipeline1",
     "RestartExecutionOnUpdate": true,
     "RoleArn": {
      "Fn::GetAtt": [
-      "AwesomePipelineRole9653F6D2",
+      "AwesomePipeline1PipelineRole163F2CF8",
       "Arn"
      ]
     },
@@ -217,7 +217,7 @@
         },
         "Configuration": {
          "ProjectName": {
-          "Ref": "AwesomePipelineBuildSynthCdkBuildProjectFB497DB7"
+          "Ref": "AwesomePipeline1PipelineBuildSynthCdkBuildProject061FC6FE"
          },
          "EnvironmentVariables": "[{\"name\":\"_PROJECT_CONFIG_HASH\",\"type\":\"PLAINTEXT\",\"value\":\"29059d3649e9bdf391cab805895e3361344865584c9864c5edb5b33b365c9a96\"}]"
         },
@@ -234,7 +234,7 @@
         ],
         "RoleArn": {
          "Fn::GetAtt": [
-          "AwesomePipelineCodeBuildActionRoleD69D1C39",
+          "AwesomePipeline1CodeBuildActionRoleD6AD0717",
           "Arn"
          ]
         },
@@ -254,7 +254,7 @@
         },
         "Configuration": {
          "ProjectName": {
-          "Ref": "AwesomePipelineUpdatePipelineSelfMutationF019C13B"
+          "Ref": "AwesomePipeline1UpdatePipelineSelfMutationD4CEA46E"
          },
          "EnvironmentVariables": "[{\"name\":\"_PROJECT_CONFIG_HASH\",\"type\":\"PLAINTEXT\",\"value\":\"a06896ecb047b023b56e063806810ef9a061b61c90f8ba151d1c8ef541a2f3dc\"}]"
         },
@@ -266,7 +266,7 @@
         "Name": "SelfMutate",
         "RoleArn": {
          "Fn::GetAtt": [
-          "AwesomePipelineCodeBuildActionRoleD69D1C39",
+          "AwesomePipeline1CodeBuildActionRoleD6AD0717",
           "Arn"
          ]
         },
@@ -278,14 +278,14 @@
     ]
    },
    "DependsOn": [
-    "AwesomePipelineRoleDefaultPolicy4DDB7187",
-    "AwesomePipelineRole9653F6D2"
+    "AwesomePipeline1PipelineRoleDefaultPolicyCBCB0D12",
+    "AwesomePipeline1PipelineRole163F2CF8"
    ],
    "Metadata": {
-    "aws:cdk:path": "CdkCicdStack/AwesomePipeline/Pipeline/Resource"
+    "aws:cdk:path": "CdkCicdStack/AwesomePipeline1/Pipeline/Resource"
    }
   },
-  "AwesomePipelineSourcewalterwu001cdkcicdWebhookResourceD06E76E5": {
+  "AwesomePipeline1PipelineSourcewalterwu001cdkcicdWebhookResourceAB94D5E6": {
    "Type": "AWS::CodePipeline::Webhook",
    "Properties": {
     "Authentication": "GITHUB_HMAC",
@@ -301,15 +301,15 @@
     "RegisterWithThirdParty": true,
     "TargetAction": "walterwu001_cdk-cicd",
     "TargetPipeline": {
-     "Ref": "AwesomePipeline55957A23"
+     "Ref": "AwesomePipeline1Pipeline56E8854F"
     },
     "TargetPipelineVersion": 1
    },
    "Metadata": {
-    "aws:cdk:path": "CdkCicdStack/AwesomePipeline/Pipeline/Source/walterwu001_cdk-cicd/WebhookResource"
+    "aws:cdk:path": "CdkCicdStack/AwesomePipeline1/Pipeline/Source/walterwu001_cdk-cicd/WebhookResource"
    }
   },
-  "AwesomePipelineBuildSynthCdkBuildProjectRole6F0B7551": {
+  "AwesomePipeline1PipelineBuildSynthCdkBuildProjectRole8716487E": {
    "Type": "AWS::IAM::Role",
    "Properties": {
     "AssumeRolePolicyDocument": {
@@ -326,10 +326,10 @@
     }
    },
    "Metadata": {
-    "aws:cdk:path": "CdkCicdStack/AwesomePipeline/Pipeline/Build/Synth/CdkBuildProject/Role/Resource"
+    "aws:cdk:path": "CdkCicdStack/AwesomePipeline1/Pipeline/Build/Synth/CdkBuildProject/Role/Resource"
    }
   },
-  "AwesomePipelineBuildSynthCdkBuildProjectRoleDefaultPolicy2C87E618": {
+  "AwesomePipeline1PipelineBuildSynthCdkBuildProjectRoleDefaultPolicy913BE171": {
    "Type": "AWS::IAM::Policy",
    "Properties": {
     "PolicyDocument": {
@@ -360,7 +360,7 @@
            },
            ":log-group:/aws/codebuild/",
            {
-            "Ref": "AwesomePipelineBuildSynthCdkBuildProjectFB497DB7"
+            "Ref": "AwesomePipeline1PipelineBuildSynthCdkBuildProject061FC6FE"
            },
            ":*"
           ]
@@ -384,7 +384,7 @@
            },
            ":log-group:/aws/codebuild/",
            {
-            "Ref": "AwesomePipelineBuildSynthCdkBuildProjectFB497DB7"
+            "Ref": "AwesomePipeline1PipelineBuildSynthCdkBuildProject061FC6FE"
            }
           ]
          ]
@@ -418,7 +418,7 @@
           },
           ":report-group/",
           {
-           "Ref": "AwesomePipelineBuildSynthCdkBuildProjectFB497DB7"
+           "Ref": "AwesomePipeline1PipelineBuildSynthCdkBuildProject061FC6FE"
           },
           "-*"
          ]
@@ -442,7 +442,7 @@
        "Resource": [
         {
          "Fn::GetAtt": [
-          "AwesomePipelineArtifactsBucket3EE45165",
+          "AwesomePipeline1PipelineArtifactsBucket926A6D61",
           "Arn"
          ]
         },
@@ -452,7 +452,7 @@
           [
            {
             "Fn::GetAtt": [
-             "AwesomePipelineArtifactsBucket3EE45165",
+             "AwesomePipeline1PipelineArtifactsBucket926A6D61",
              "Arn"
             ]
            },
@@ -465,18 +465,18 @@
      ],
      "Version": "2012-10-17"
     },
-    "PolicyName": "AwesomePipelineBuildSynthCdkBuildProjectRoleDefaultPolicy2C87E618",
+    "PolicyName": "AwesomePipeline1PipelineBuildSynthCdkBuildProjectRoleDefaultPolicy913BE171",
     "Roles": [
      {
-      "Ref": "AwesomePipelineBuildSynthCdkBuildProjectRole6F0B7551"
+      "Ref": "AwesomePipeline1PipelineBuildSynthCdkBuildProjectRole8716487E"
      }
     ]
    },
    "Metadata": {
-    "aws:cdk:path": "CdkCicdStack/AwesomePipeline/Pipeline/Build/Synth/CdkBuildProject/Role/DefaultPolicy/Resource"
+    "aws:cdk:path": "CdkCicdStack/AwesomePipeline1/Pipeline/Build/Synth/CdkBuildProject/Role/DefaultPolicy/Resource"
    }
   },
-  "AwesomePipelineBuildSynthCdkBuildProjectFB497DB7": {
+  "AwesomePipeline1PipelineBuildSynthCdkBuildProject061FC6FE": {
    "Type": "AWS::CodeBuild::Project",
    "Properties": {
     "Artifacts": {
@@ -496,7 +496,7 @@
     },
     "ServiceRole": {
      "Fn::GetAtt": [
-      "AwesomePipelineBuildSynthCdkBuildProjectRole6F0B7551",
+      "AwesomePipeline1PipelineBuildSynthCdkBuildProjectRole8716487E",
       "Arn"
      ]
     },
@@ -506,10 +506,10 @@
     }
    },
    "Metadata": {
-    "aws:cdk:path": "CdkCicdStack/AwesomePipeline/Pipeline/Build/Synth/CdkBuildProject/Resource"
+    "aws:cdk:path": "CdkCicdStack/AwesomePipeline1/Pipeline/Build/Synth/CdkBuildProject/Resource"
    }
   },
-  "AwesomePipelineCodeBuildActionRoleD69D1C39": {
+  "AwesomePipeline1CodeBuildActionRoleD6AD0717": {
    "Type": "AWS::IAM::Role",
    "Properties": {
     "AssumeRolePolicyDocument": {
@@ -520,7 +520,7 @@
        "Principal": {
         "AWS": {
          "Fn::GetAtt": [
-          "AwesomePipelineRole9653F6D2",
+          "AwesomePipeline1PipelineRole163F2CF8",
           "Arn"
          ]
         }
@@ -531,10 +531,10 @@
     }
    },
    "Metadata": {
-    "aws:cdk:path": "CdkCicdStack/AwesomePipeline/CodeBuildActionRole/Resource"
+    "aws:cdk:path": "CdkCicdStack/AwesomePipeline1/CodeBuildActionRole/Resource"
    }
   },
-  "AwesomePipelineCodeBuildActionRoleDefaultPolicyF690EB65": {
+  "AwesomePipeline1CodeBuildActionRoleDefaultPolicy249C448C": {
    "Type": "AWS::IAM::Policy",
    "Properties": {
     "PolicyDocument": {
@@ -549,13 +549,13 @@
        "Resource": [
         {
          "Fn::GetAtt": [
-          "AwesomePipelineBuildSynthCdkBuildProjectFB497DB7",
+          "AwesomePipeline1PipelineBuildSynthCdkBuildProject061FC6FE",
           "Arn"
          ]
         },
         {
          "Fn::GetAtt": [
-          "AwesomePipelineUpdatePipelineSelfMutationF019C13B",
+          "AwesomePipeline1UpdatePipelineSelfMutationD4CEA46E",
           "Arn"
          ]
         }
@@ -564,18 +564,18 @@
      ],
      "Version": "2012-10-17"
     },
-    "PolicyName": "AwesomePipelineCodeBuildActionRoleDefaultPolicyF690EB65",
+    "PolicyName": "AwesomePipeline1CodeBuildActionRoleDefaultPolicy249C448C",
     "Roles": [
      {
-      "Ref": "AwesomePipelineCodeBuildActionRoleD69D1C39"
+      "Ref": "AwesomePipeline1CodeBuildActionRoleD6AD0717"
      }
     ]
    },
    "Metadata": {
-    "aws:cdk:path": "CdkCicdStack/AwesomePipeline/CodeBuildActionRole/DefaultPolicy/Resource"
+    "aws:cdk:path": "CdkCicdStack/AwesomePipeline1/CodeBuildActionRole/DefaultPolicy/Resource"
    }
   },
-  "AwesomePipelineUpdatePipelineSelfMutationRole570FD93A": {
+  "AwesomePipeline1UpdatePipelineSelfMutationRole1B479514": {
    "Type": "AWS::IAM::Role",
    "Properties": {
     "AssumeRolePolicyDocument": {
@@ -592,10 +592,10 @@
     }
    },
    "Metadata": {
-    "aws:cdk:path": "CdkCicdStack/AwesomePipeline/UpdatePipeline/SelfMutation/Role/Resource"
+    "aws:cdk:path": "CdkCicdStack/AwesomePipeline1/UpdatePipeline/SelfMutation/Role/Resource"
    }
   },
-  "AwesomePipelineUpdatePipelineSelfMutationRoleDefaultPolicy25E02245": {
+  "AwesomePipeline1UpdatePipelineSelfMutationRoleDefaultPolicyFEA20715": {
    "Type": "AWS::IAM::Policy",
    "Properties": {
     "PolicyDocument": {
@@ -626,7 +626,7 @@
            },
            ":log-group:/aws/codebuild/",
            {
-            "Ref": "AwesomePipelineUpdatePipelineSelfMutationF019C13B"
+            "Ref": "AwesomePipeline1UpdatePipelineSelfMutationD4CEA46E"
            },
            ":*"
           ]
@@ -650,7 +650,7 @@
            },
            ":log-group:/aws/codebuild/",
            {
-            "Ref": "AwesomePipelineUpdatePipelineSelfMutationF019C13B"
+            "Ref": "AwesomePipeline1UpdatePipelineSelfMutationD4CEA46E"
            }
           ]
          ]
@@ -684,7 +684,7 @@
           },
           ":report-group/",
           {
-           "Ref": "AwesomePipelineUpdatePipelineSelfMutationF019C13B"
+           "Ref": "AwesomePipeline1UpdatePipelineSelfMutationD4CEA46E"
           },
           "-*"
          ]
@@ -734,7 +734,7 @@
        "Resource": [
         {
          "Fn::GetAtt": [
-          "AwesomePipelineArtifactsBucket3EE45165",
+          "AwesomePipeline1PipelineArtifactsBucket926A6D61",
           "Arn"
          ]
         },
@@ -744,7 +744,7 @@
           [
            {
             "Fn::GetAtt": [
-             "AwesomePipelineArtifactsBucket3EE45165",
+             "AwesomePipeline1PipelineArtifactsBucket926A6D61",
              "Arn"
             ]
            },
@@ -757,18 +757,18 @@
      ],
      "Version": "2012-10-17"
     },
-    "PolicyName": "AwesomePipelineUpdatePipelineSelfMutationRoleDefaultPolicy25E02245",
+    "PolicyName": "AwesomePipeline1UpdatePipelineSelfMutationRoleDefaultPolicyFEA20715",
     "Roles": [
      {
-      "Ref": "AwesomePipelineUpdatePipelineSelfMutationRole570FD93A"
+      "Ref": "AwesomePipeline1UpdatePipelineSelfMutationRole1B479514"
      }
     ]
    },
    "Metadata": {
-    "aws:cdk:path": "CdkCicdStack/AwesomePipeline/UpdatePipeline/SelfMutation/Role/DefaultPolicy/Resource"
+    "aws:cdk:path": "CdkCicdStack/AwesomePipeline1/UpdatePipeline/SelfMutation/Role/DefaultPolicy/Resource"
    }
   },
-  "AwesomePipelineUpdatePipelineSelfMutationF019C13B": {
+  "AwesomePipeline1UpdatePipelineSelfMutationD4CEA46E": {
    "Type": "AWS::CodeBuild::Project",
    "Properties": {
     "Artifacts": {
@@ -786,10 +786,10 @@
      "PrivilegedMode": false,
      "Type": "LINUX_CONTAINER"
     },
-    "Name": "AwesomePipeline-selfupdate",
+    "Name": "AwesomePipeline1-selfupdate",
     "ServiceRole": {
      "Fn::GetAtt": [
-      "AwesomePipelineUpdatePipelineSelfMutationRole570FD93A",
+      "AwesomePipeline1UpdatePipelineSelfMutationRole1B479514",
       "Arn"
      ]
     },
@@ -799,7 +799,7 @@
     }
    },
    "Metadata": {
-    "aws:cdk:path": "CdkCicdStack/AwesomePipeline/UpdatePipeline/SelfMutation/Resource"
+    "aws:cdk:path": "CdkCicdStack/AwesomePipeline1/UpdatePipeline/SelfMutation/Resource"
    }
   },
   "CDKMetadata": {
