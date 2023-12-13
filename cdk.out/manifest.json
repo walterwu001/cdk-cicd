@@ -18,7 +18,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/2fe6a644635923baf7070098cb31045b686a48be64013a70e1ab9770eaa25c32.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/005751d5750443bfce1cf3347e191f08178eb48c91a0153ccf811cb67b516f20.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -34,6 +34,90 @@
         "CdkCicdStack.assets"
       ],
       "metadata": {
+        "/CdkCicdStack/AwesomePipeline/Pipeline/ArtifactsBucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AwesomePipelineArtifactsBucket3EE45165"
+          }
+        ],
+        "/CdkCicdStack/AwesomePipeline/Pipeline/ArtifactsBucket/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AwesomePipelineArtifactsBucketPolicy276A13A5"
+          }
+        ],
+        "/CdkCicdStack/AwesomePipeline/Pipeline/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AwesomePipelineRole9653F6D2"
+          }
+        ],
+        "/CdkCicdStack/AwesomePipeline/Pipeline/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AwesomePipelineRoleDefaultPolicy4DDB7187"
+          }
+        ],
+        "/CdkCicdStack/AwesomePipeline/Pipeline/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AwesomePipeline55957A23"
+          }
+        ],
+        "/CdkCicdStack/AwesomePipeline/Pipeline/Source/walterwu001_cdk-cicd/WebhookResource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AwesomePipelineSourcewalterwu001cdkcicdWebhookResourceD06E76E5"
+          }
+        ],
+        "/CdkCicdStack/AwesomePipeline/Pipeline/Build/Synth/CdkBuildProject/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AwesomePipelineBuildSynthCdkBuildProjectRole6F0B7551"
+          }
+        ],
+        "/CdkCicdStack/AwesomePipeline/Pipeline/Build/Synth/CdkBuildProject/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AwesomePipelineBuildSynthCdkBuildProjectRoleDefaultPolicy2C87E618"
+          }
+        ],
+        "/CdkCicdStack/AwesomePipeline/Pipeline/Build/Synth/CdkBuildProject/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AwesomePipelineBuildSynthCdkBuildProjectFB497DB7"
+          }
+        ],
+        "/CdkCicdStack/AwesomePipeline/CodeBuildActionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AwesomePipelineCodeBuildActionRoleD69D1C39"
+          }
+        ],
+        "/CdkCicdStack/AwesomePipeline/CodeBuildActionRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AwesomePipelineCodeBuildActionRoleDefaultPolicyF690EB65"
+          }
+        ],
+        "/CdkCicdStack/AwesomePipeline/UpdatePipeline/SelfMutation/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AwesomePipelineUpdatePipelineSelfMutationRole570FD93A"
+          }
+        ],
+        "/CdkCicdStack/AwesomePipeline/UpdatePipeline/SelfMutation/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AwesomePipelineUpdatePipelineSelfMutationRoleDefaultPolicy25E02245"
+          }
+        ],
+        "/CdkCicdStack/AwesomePipeline/UpdatePipeline/SelfMutation/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AwesomePipelineUpdatePipelineSelfMutationF019C13B"
+          }
+        ],
         "/CdkCicdStack/CDKMetadata/Default": [
           {
             "type": "aws:cdk:logicalId",
