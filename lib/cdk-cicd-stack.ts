@@ -7,8 +7,8 @@ export class CdkCicdStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
-    new CodePipeline(this, 'AwesomePipeline', {
-      pipelineName: 'AwesomePipeline',
+    new CodePipeline(this, 'AwesomePipeline1', {
+      pipelineName: 'AwesomePipeline1',
       synth: new ShellStep('Synth', {
         input: CodePipelineSource.gitHub('walterwu001/cdk-cicd', 'cicd-practice'),
         commands: [
@@ -18,6 +18,6 @@ export class CdkCicdStack extends cdk.Stack {
         primaryOutputDirectory: 'cdk-cicd/cdk.out'
       })
     });
-    
+
   }
 }
