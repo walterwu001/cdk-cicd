@@ -1,6 +1,13 @@
 {
   "version": "35.0.0",
   "artifacts": {
+    "assembly-CdkCicdStack-PipelineTestStage": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-CdkCicdStack-PipelineTestStage",
+        "displayName": "CdkCicdStack/PipelineTestStage"
+      }
+    },
     "CdkCicdStack.assets": {
       "type": "cdk:asset-manifest",
       "properties": {
@@ -18,7 +25,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/d1e0f2c6a23b8dfbcace22626a587645d6351a8e8d1324b33de6ff4c90b281c8.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/05af67b6ff7ac55f12ecd23f4b7735e9046e249c023472ef5b8dbbcbdd4d0fa3.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -116,6 +123,24 @@
           {
             "type": "aws:cdk:logicalId",
             "data": "AwesomePipeline1UpdatePipelineSelfMutationD4CEA46E"
+          }
+        ],
+        "/CdkCicdStack/AwesomePipeline1/Assets/FileRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AwesomePipeline1AssetsFileRoleA66967A1"
+          }
+        ],
+        "/CdkCicdStack/AwesomePipeline1/Assets/FileRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AwesomePipeline1AssetsFileRoleDefaultPolicyA15C40AB"
+          }
+        ],
+        "/CdkCicdStack/AwesomePipeline1/Assets/FileAsset1/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AwesomePipeline1AssetsFileAsset1E4CEFF68"
           }
         ],
         "/CdkCicdStack/CDKMetadata/Default": [
